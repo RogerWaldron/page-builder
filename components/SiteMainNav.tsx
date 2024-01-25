@@ -14,7 +14,7 @@ export function SiteMainNav() {
     <nav className="flex justify-center w-full h-16 border-b border-b-foreground/10">
       <div className="flex items-center justify-between w-full max-w-4xl p-3 text-sm">
         {/* <DeployButton /> */}
-        <div className="hidden gap-8 md:flex">
+        <div className="hidden gap-8 py-2 text-base md:flex">
           <Link href="/" className="flex items-center mr-6 space-x-2">
             <span className="hidden font-bold sm:inline-block">
               {siteConfig.name}
