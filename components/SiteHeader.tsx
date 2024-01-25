@@ -10,8 +10,8 @@ function SiteHeader() {
       <div className="container flex items-center h-14 max-w-screen-2xl">
         <SiteMainNav />
         <SiteMobileNav />
-        <ModeToggle />
         <AuthButton />
+        <ModeToggle />
       </div>
     </header>
   );
