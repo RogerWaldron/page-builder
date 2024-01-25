@@ -98,15 +98,19 @@ export default function Login({
           placeholder="••••••••"
           required
         />
-        <button className="px-4 py-2 mb-2 bg-green-700 rounded-md text-foreground">
-          Sign In
-        </button>
-        <button
-          formAction={signUp}
-          className="px-4 py-2 mb-2 border rounded-md border-foreground/20 text-foreground"
-        >
-          Sign Up
-        </button>
+        <div className="flex-auto gap-4 mx-auto mb-6">
+          <div className="grid grid-cols-1 gap-4 mx-auto md:grid-cols-2">
+            <button className="px-3 py-2 text-lg font-medium leading-6 bg-green-700 rounded-md text-foreground">
+              Sign In
+            </button>
+            <button
+              formAction={signUp}
+              className="px-3 py-2 text-lg font-medium leading-6 rounded-md border-foreground/20 text-foreground"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
         {searchParams?.message && (
           <p className="p-4 mt-4 text-center bg-foreground/10 text-foreground">
             {searchParams.message}
