@@ -3,6 +3,7 @@ import { SiteMainNav } from "./SiteMainNav";
 import { ModeToggle } from "./ThemeSwitcher";
 import AuthButton from "./AuthButton";
 import SiteMobileNav from "./SiteMobileNav";
+import AuthNavLinks from "./AuthNavLinks";
 
 function SiteHeader() {
   return (
@@ -10,6 +11,7 @@ function SiteHeader() {
       <div className="container flex items-center h-14 max-w-screen-2xl">
         <SiteMainNav />
         <SiteMobileNav />
+        <AuthNavLinks />
         <AuthButton />
         <ModeToggle />
       </div>
