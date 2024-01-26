@@ -4,6 +4,7 @@ export interface NavItem {
   disabled?: boolean;
   external?: boolean;
   label?: string;
+  files?: string[];
 }
 
 export interface NavItemWithChildren extends NavItem {
