@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/provider/theme-provider";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { cn } from "@/lib/utils";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -21,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          GeistSans.className
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -29,9 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="">
-            <div className="flex flex-col min-h-screen bg-background text-foreground">
+            <div className="relative flex flex-col min-h-screen bg-background">
               <SiteHeader />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1 w-full">{children}</main>
               <SiteFooter />
             </div>
           </div>
