@@ -8,7 +8,7 @@ import AuthNavLinks from "./AuthNavLinks";
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full mb-8">
-      <div className="container flex items-center h-14 max-w-screen-2xl">
+      <div className="container flex items-center h-14">
         <SiteMainNav />
         <SiteMobileNav />
         <AuthNavLinks />
