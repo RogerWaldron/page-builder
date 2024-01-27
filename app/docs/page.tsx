@@ -1,9 +1,22 @@
+import PageActions from "@/components/PageActions";
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/PageHeader";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+
 export default async function Index() {
   return (
-    <div className="flex flex-col items-center flex-1 w-full gap-20">
-      <div className="flex flex-col flex-1 gap-20 px-3">
-        <h1 className="text-xl text-cyan-600">Docs page</h1>
-      </div>
+    <div className="container relative">
+      <PageHeader>
+        <PageHeaderHeading>Documentation</PageHeaderHeading>
+        <PageHeaderDescription>
+          Brief overview of components that you can drag and drop.
+        </PageHeaderDescription>
+      </PageHeader>
     </div>
   );
 }
