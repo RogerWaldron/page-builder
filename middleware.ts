@@ -9,7 +9,10 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user && req.nextUrl.pathname === "/dashboard") {
+  if (
+    (!user && req.nextUrl.pathname === "/dashboard") ||
+    (!user && req.nextUrl.pathname === "/photos")
+  ) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
@@ -18,5 +21,5 @@ export async function middleware(req: NextRequest) {
 
 // anything here needs auth
 export const config = {
-  matcher: ["/dashboard"],
+  matcher: ["/dashboard", "/photos"],
 };
