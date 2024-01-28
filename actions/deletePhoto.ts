@@ -4,7 +4,7 @@ import { createServerClient } from "@supabase/ssr";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-import type { Database } from '@/types/supabase'
+import type { Database } from "@/types/supabase";
 
 function extractFilePath(url: string) {
   const parts = url.split("/user_uploads/");
@@ -25,13 +25,13 @@ export async function deletePhoto(formData: FormData) {
   const cookieStore = cookies();
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string,,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string,
     {
       cookies: {
         get(name) {
           return cookieStore.get(name)?.value;
         },
-        set(name) {
+        set(name, value, options) {
           cookieStore.set({ name, value, ...options });
         },
         remove(name, options) {
